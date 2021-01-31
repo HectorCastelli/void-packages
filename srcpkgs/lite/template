@@ -1,0 +1,23 @@
+# Template file for 'lite'
+pkgname=lite
+version=1.11
+revision=1
+archs="i686 x86_64 x86_64-musl"
+build_style=fetch
+hostmakedepends="gcc tar SDL2-devel"
+makedepends="gcc tar SDL2-devel"
+short_desc="Lite is a lightweight text editor written in Lua"
+maintainer="Hector Castelli Zacharias <hector.zacharias@gmail.com>"
+license="MIT"
+homepage="https://github.com/rxi/lite"
+distfiles="https://github.com/rxi/lite/archive/v${version}.tar.gz"
+checksum=2fd9466663182da56a36a557d05925d226dc1c5de6fb24e423a7b0056db2eec4
+
+do_build() {
+	echo build
+	./build.sh
+}
+
+do_install() {
+	vbin lite
+}
